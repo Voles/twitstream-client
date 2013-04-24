@@ -1,4 +1,4 @@
-twitstream-client
+Twitstream client
 =================
 
 Twitstream client application

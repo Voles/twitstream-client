@@ -1,1 +1,156 @@
 @import "compass_twitter_bootstrap";
+
+body{
+	background-color:rgba(0, 0, 0, 0.8);
+	color:white;
+}
+
+.main{
+	max-width:960px;
+	margin:0 auto;
+}
+.header {
+	position:relative;
+	margin:30px 10px 30px 10px;
+	background-color:#185669;
+	padding:10px;
+	color:white;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	width:780px;
+
+	label{
+		margin:5px;
+		font-size:6em;
+		line-height:62px;
+		float:left;
+	}
+
+	span{
+		display:block;
+		overflow:hidden;
+		padding:5px;
+	}
+
+	input{
+		border:none;
+		padding:5px;
+		margin:0;
+		height:50px;
+		background:rgba(0,0,0,0.02);
+		font-size:3em;
+		line-height:50px;
+		width:99%;
+		color:white;
+		text-indent:5px;
+	}
+
+	.tweetCount{
+		position:absolute;
+		background-color:#3fc3c5;
+		line-height:70px;
+		top:-10px;
+		right:-130px;
+		font-size:5em;
+		border-radius:2px;
+		-webkit-border-radius:2px;
+		-moz-border-radius:2px;
+		padding:20px;
+	}
+
+}
+.body{
+	margin:10px;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	overflow:hidden;
+
+	.twitterStream{
+		overflow:hidden;
+	    margin:10px;
+
+		span{
+			display:block;
+			overflow:hidden;
+			border-radius:2px;
+			-webkit-border-radius:2px;
+			-moz-border-radius:2px;
+		}
+
+		input{
+			border:none;
+			padding:5px;
+			margin:0;
+			height:50px;
+			background:rgba(0, 0, 0, 0.1);
+			font-size:2em;
+			line-height:50px;
+			width:700px;
+			color:white;
+			text-indent:5px;
+			}
+
+		ul{
+			overflow:hidden;
+			margin-top:10px;
+			padding:0;
+
+			.tweet{
+				border-radius:2px;
+				-webkit-border-radius:2px;
+				-moz-border-radius:2px;
+				background-color:#1b96d1;
+				overflow:hidden;
+				margin-bottom:5px;
+				padding:5px;
+
+				img{
+					float:left;
+					width:100px;
+					height:100px;
+					padding:5px;
+				}
+
+				a{
+					color:white;
+					font-weight:bold;
+					margin:10px;
+					display:inline-block;
+				}
+
+				p{
+					margin-left:120px;
+				}
+			}
+		}
+	}
+
+	.searchHistory{
+		float:right;
+	    width:200px;
+	    background:#185669;
+	    overflow:hidden;
+		border-radius:2px;
+		-webkit-border-radius:2px;
+		-moz-border-radius:2px;
+		margin:10px;	
+		color:white;
+
+		span{
+			font-weight:bold;
+			padding:10px 0 10px 10px;
+			display:block;
+			border-bottom:3px solid #333;
+		}
+
+		ul{
+			list-style-type:none;
+
+			li{
+				margin:10px;
+			}
+		}
+	}
+}

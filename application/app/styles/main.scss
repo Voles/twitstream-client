@@ -9,31 +9,31 @@ body {
 	padding: 25px 0;
 	position: relative;
 
-	.hashtag {
-		font-size: 5em;
-		font-family: Verdana;
-		font-weight: bold;
-		margin: 0;
-		height: 60px;
-		line-height: 80px;
-		text-align: right;
-		padding-top: 10px;
-	}
-
 	.query {
-		margin: 0;
-	}
+		padding: 0 0 0 15px;
 
-	.query input {
-		color: black;
-		font-size: 5em;
-		width: 100%;
-		background: transparent;
-		border: none;
-		font-weight: bold;
-		line-height: 40px;
-		height: 90px;
-		@include box-shadow(none);
+		.hashtag {
+			font-size: 5em;
+			font-family: Verdana;
+			font-weight: bold;
+			margin: 0;
+			height: 60px;
+			line-height: 80px;
+			text-align: right;
+			padding-top: 10px;
+		}
+
+		input {
+			color: black;
+			font-size: 5em;
+			width: 575px;
+			background: transparent;
+			border: none;
+			font-weight: bold;
+			line-height: 40px;
+			height: 90px;
+			@include box-shadow(none);
+		}
 	}
 
 	.tweetcount {
@@ -51,7 +51,12 @@ body {
 	padding: 25px 0 0 0;
 
 	.tweets {
-		margin: 0;
+		margin-left: 35px;
+		width: 670px;
+
+		ul {
+			width: 625px;
+		}
 	}
 
 	.history {

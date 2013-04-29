@@ -2,10 +2,10 @@
 <div class="row header">
 	<div class="span10 query clearfix">
 		<span class="hashtag pull-left">#</span>
-		<input class="pull-left" type="text" value="angularjs" />
+		<input class="pull-left" type="text" ng-model="hashtag" />
 	</div>
 	
-	<span class="tweetcount label label-info">50</span>
+	<span class="tweetcount label label-info">{tweets.length}</span>
 </div>
 <!-- /HEADER -->
 
@@ -14,39 +14,20 @@
 	<div class="span9 tweets">
 		<h3>Incoming tweets</h3>
 		<ul class="unstyled">
-			<li class="tweet">
-				<img src="images/avatar.png" alt="Avatar" title="Avatar" class="avatar" />
-				<a href="#">Smashing Magazine</a>
-				<p>
-					{Coveralls: provides constant updates on your project's automated test coverage - https://coveralls.io  / cc: @addy_osmani}
-				</p>
-			</li>
-			<li class="tweet">
-				<img src="images/avatar.png" alt="Avatar" title="Avatar" class="avatar" />
-				<a href="#">Smashing Magazine</a>
-				<p>
-					Coveralls: provides constant updates on your project's automated test coverage - https://coveralls.io  / cc: @addy_osmani
-				</p>
-			</li>
-			<li class="tweet">
-				<img src="images/avatar.png" alt="Avatar" title="Avatar" class="avatar" />
-				<a href="#">Smashing Magazine</a>
-				<p>
-					Coveralls: provides constant updates on your project's automated test coverage - https://coveralls.io  / cc: @addy_osmani
-				</p>
+			<li ng-repeat="tweet in tweets">
+				<img ng-src="{tweet.author_avatar_url}" class="avatar" />
+				<a href="#">{tweet.author_profile_url}</a>
+				<p>{tweet.text|linkify}</p>
 			</li>
 		</ul>
 	</div>
 	<div class="span3 history">
 		<h3>Search</h3>
-		<input type="text" placeholder="Click to search..." />
+		<input type="text" placeholder="Click to search..." ng-model="query" />
 
 		<h3>History</h3>
 		<ul class="well">
-			<li><a href="#">#angularjs</a></li>
-			<li><a href="#">#emberjs</a></li>
-			<li><a href="#">#backbonejs</a></li>
-			<li><a href="#">#jsmvcmeetup</a></li>
+			<li ng-repeat="query in history"><a ng-click="setQuery(query)">#{query}</a></li>
 		</ul>
 	</div>
 </div>

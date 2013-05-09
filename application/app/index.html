@@ -42,9 +42,9 @@
           <div class="span9 tweets">
             <h3>Incoming tweets</h3>
             <div class="media" ng-repeat="tweet in data.tweets|filter:data.query|orderBy:'created_at':true">
-              <a class="pull-left" href="#"><img ng-src="tweet.author_avatar_url" class="media-object" /></a>
+              <a class="pull-left" href="#"><img ng-src="tweet.user.profile_image_url" class="media-object" /></a>
               <div class="media-body">
-                <a class="media-heading">{{tweet.user.profile_image_url}}</a>
+                <a class="media-heading"></a>
                 <strong>{{tweet.created_at}}</strong>
                 {{tweet.text}}
               </div>

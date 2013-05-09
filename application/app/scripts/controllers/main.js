@@ -23,10 +23,15 @@ app.controller('MainCtrl', ['$scope', 'socketio', 'Data', function ($scope, sock
 		tweets: Data.tweets,
 		query: ''
 	};
-
+	
 	socketio.on('tweet', function (tweet)
 	{
-		Data.tweets.push(tweet);
+		$scope.data.tweets.push(tweet);
+	});
+
+	socketio.on('get:keyword', function (keyword)
+	{
+		$scope.data.keyword = keyword;
 	});
 
 	$scope.setKeyword = function (data)

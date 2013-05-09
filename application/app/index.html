@@ -31,7 +31,7 @@
       <div class="row header">
         <div class="span10 query clearfix">
           <span class="hashtag pull-left">#</span>
-          <input class="pull-left" type="text" ng-model="data.keyword" />
+          <input class="pull-left" type="text" ng-model="data.keyword" enter="setKeyword(data.keyword)" />
         </div>
         
         <span class="tweetcount label label-info">{{data.tweets.length}}</span>

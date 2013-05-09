@@ -25,13 +25,51 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+    <div class="container" ng-controller="MainCtrl">
+
+      <!-- HEADER -->
+      <div class="row header">
+        <div class="span10 query clearfix">
+          <span class="hashtag pull-left">#</span>
+          <input class="pull-left" type="text" ng-model="data.keyword" />
+        </div>
+        
+        <span class="tweetcount label label-info">{{data.tweets.length}}</span>
+      </div>
+      <!-- /HEADER -->
+      <!-- CONTENT -->
+      <div class="row content">
+          <div class="span9 tweets">
+            <h3>Incoming tweets</h3>
+            <div class="media" ng-repeat="tweet in data.tweets|filter:data.query">
+              <a class="pull-left" href="#"><img ng-src="tweet.author_avatar_url" class="media-object" /></a>
+              <div class="media-body">
+                <a class="media-heading">{{tweet.user.profile_image_url}}</a>
+                {{tweet.text}}
+              </div>
+            </div>
+          </div>
+          <div class="span3 history">
+            <h3>Search</h3>
+            <input type="text" placeholder="Click to search..." ng-model="data.query" />
+
+            <h3>History</h3>
+            <ul class="well">
+              <li ng-repeat="query in history"><a ng-click="setQuery(query)">#{query}</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- /CONTENT -->
+
+    </div>
 
     <script src="components/angular/angular.js"></script>
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/libraries/socketio.js"></script>
+    <script src="scripts/services/socketio.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

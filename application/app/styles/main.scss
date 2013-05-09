@@ -1,9 +1,11 @@
+/* --- Imports --- */
 @import "compass_twitter_bootstrap";
 
 body {
 	background-color: white;
 }
 
+/* --- Header --- */
 .header {
 	background-color: #cccccc;
 	padding: 25px 0;
@@ -47,6 +49,7 @@ body {
 	}
 }
 
+/* --- Content --- */
 .content {
 	padding: 25px 0 0 0;
 

@@ -18,6 +18,7 @@ app.controller('MainCtrl', ['$scope', 'socketio', 'Data', function ($scope, sock
 	socketio.on('get:keyword', function (keyword)
 	{
 		$scope.data.keyword = keyword;
+		$scope.data.history.push(keyword);
 	});
 
 	/**

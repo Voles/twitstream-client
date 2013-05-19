@@ -7,7 +7,7 @@ app.controller('MainCtrl', ['$scope', 'socketio', 'Data', function ($scope, sock
 		keyword: Data.keyword,
 		tweets: Data.tweets,
 		query: { 'text': '' },
-		history: []
+		history: [Data.keyword]
 	};
 	
 	socketio.on('tweet', function (tweet)

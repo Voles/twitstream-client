@@ -41,6 +41,7 @@
       <div class="row content">
           <div class="span9 tweets">
             <h3>Incoming tweets</h3>
+            <em ng-show="data.tweets.length < 1">No Tweets available.</em>
             <div class="media" ng-repeat="tweet in data.tweets|filter:data.query|orderBy:'created_at':true">
               <a class="pull-left" href="#"><img ng-src="{{tweet.user.profile_image_url}}" class="media-object" /></a>
               <div class="media-body">

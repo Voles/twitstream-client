@@ -4,14 +4,7 @@ app.factory('Data', ['socketio', function(socketio)
 {
 	return {
 		// data
-		tweets: [
-		{
-			'text': 'this is a tweet',
-			'user': {
-				'name': 'Niels'
-			}
-		}
-		],
+		tweets: [],
 		keyword: 'AngularJS',
 
 		// methods

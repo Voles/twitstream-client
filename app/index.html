@@ -46,19 +46,17 @@
               <div class="media-body">
                 <a class="media-heading"></a>
                 <strong>{{tweet.user.name}}</strong>
-                <p>
-                  {{tweet.text}}
-                </p>
+                <p ng-bind-html="tweet.text|highlight:data.query.text"></p>
               </div>
             </div>
           </div>
           <div class="span3 history">
             <h3>Search</h3>
-            <input type="text" placeholder="Click to search..." ng-model="data.query" />
+            <input type="text" placeholder="Click to search..." ng-model="data.query.text" />
 
             <h3>History</h3>
             <ul class="well">
-              <li ng-repeat="query in history"><a ng-click="setQuery(query)">#{query}</a></li>
+              <li ng-repeat="query in data.history|reverse|unique"><a ng-click="setKeyword(query)">#{{query}}</a></li>
             </ul>
           </div>
         </div>
@@ -67,12 +65,23 @@
     </div>
 
     <script src="components/angular/angular.js"></script>
+    <script src="components/angular-sanitize/angular-sanitize.js"></script>
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+
     <script src="scripts/controllers/main.js"></script>
+
     <script src="scripts/libraries/socketio.js"></script>
+
+    <script src="scripts/directives/enter.js"></script>
+
+    <script src="scripts/filters/reverse.js"></script>
+    <script src="scripts/filters/unique.js"></script>
+    <script src="scripts/filters/highlight.js"></script>
+
     <script src="scripts/services/socketio.js"></script>
+    <script src="scripts/services/data.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

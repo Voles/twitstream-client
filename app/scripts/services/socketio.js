@@ -3,7 +3,7 @@
 app.factory('socketio', function ($rootScope)
 {
 	// connect with the server
-	var socket = io.connect('http://192.168.1.122:8080');
+	var socket = io.connect('http://localhost:8080');
 
 	return {
 		on: function (eventName, callback)
